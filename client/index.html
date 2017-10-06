@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.js"></script>
+      
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+
+  <body>
+    <center>
+    <br>
+    <br>
+    <br>
+    <form action="https://api.particle.io/v1/devices/4b0042000151353532373238/led?access_token= " method="POST">
+      Tell your device what to do!<br>
+      <br>
+      <input type="radio" name="arg" value="on">Turn the LED on.
+      <br>
+      <input type="radio" name="arg" value="off">Turn the LED off.
+      <br>
+      <br>
+      <input type="submit" value="Do it!">
+    </form>
+    </center>
+<div ng-app="myApp">
+
+    <h1>Evénements captés par le serveur :</h1>
+
+  <div class="container">
+    <div ng-view></div>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+  <script src="./static/myApp.js"></script>
+  <script src="./static/controller/myCtrl.js"></script>
+
+    <script type="text/javascript">
+      var socket = io.connect('http://localhost:3000');
+            socket.on("emission",function(socket){
+                console.log(socket);
+        });
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<h1>Nous sommes dans la vue 2</h1>
+
+<p>infos du device :</p>
+
+<div ng->{{coreid}}
+{{data}}
+{{published_at}}
+{{name}}
+</div>
+
+
+<form action="https://api.particle.io/v1/devices/4b0042000151353532373238/led?access_token= " method="POST">
+	<h2>On fait quoi ?</h2> <br>
+    <input type="radio" name="arg" value="on">Turn the LED on.
+    <br>
+    <input type="radio" name="arg" value="off">Turn the LED off.
+    <br>
+    <br>
+    <input type="submit" value="Do it!">
+    </form>
+    </center>
+<div ng-app="myApp">

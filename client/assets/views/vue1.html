@@ -1,0 +1,20 @@
+<h1>Je suis dans la vue1</h1>
+
+
+
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Event Name</th>
+      <th>published at</th>
+      <th>data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="n in socket">
+      <td>{{n.name}}</td>
+      <td>{{n.published_at}}</td>
+      <td>{{n.data}}</td>
+    </tr>
+  </tbody>
+</table>
